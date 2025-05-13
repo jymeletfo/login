@@ -15,7 +15,7 @@ export default async function Home() {
           await signIn("google", { redirectTo: "/dashboard" });
         }}
       >
-        <Button>Login</Button>
+        <Button>Login with Google</Button>
       </form>
     </div>
   );

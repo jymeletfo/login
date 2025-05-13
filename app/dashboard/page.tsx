@@ -1,4 +1,3 @@
-import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { signOut, auth } from "@/auth";
 import { redirect } from "next/navigation";
@@ -26,14 +25,14 @@ export default async function Dashboard() {
           </CardContent>
         </Card>
 
-        <form
+        {/* <form
           action={async () => {
             "use server";
             await signOut();
           }}
         >
           <Button>Signout</Button>
-        </form>
+        </form> */}
       </div>
     </>
   );
