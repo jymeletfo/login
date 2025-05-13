@@ -1,10 +1,13 @@
 "use client";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-// import { signOut } from "@/auth";
 import { signOut } from "next-auth/react";
+import { useState } from "react";
+import { LoaderCircle } from "lucide-react";
 
 export default function Navbar() {
+  const [loading, setLoading] = useState(false);
+
   return (
     <nav className="w-full px-2 py-4 bg-slate-50/70 absolute border-b border-slate-200 top-0 backdrop-blur-sm">
       <div className="container mx-auto flex items-center justify-between">
@@ -17,8 +20,13 @@ export default function Navbar() {
             <Button
               variant="outline"
               className="text-sm"
-              onClick={() => signOut()}
+              onClick={() => {
+                setLoading(true);
+                signOut();
+              }}
+              disabled={loading}
             >
+              <LoaderCircle className={loading ? "animate-spin" : "hidden"} />
               Signout
             </Button>
           </li>
