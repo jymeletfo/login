@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { signOut, auth } from "@/auth";
 import { redirect } from "next/navigation";
 import Navbar from "@/custom/navbar";
@@ -14,8 +15,17 @@ export default async function Dashboard() {
     <>
       <Navbar />
       <div className="container mx-auto mt-20">
-        <h1>Dashboard</h1>
-        <p>Welcome to the dashboard! {session.user?.name}</p>
+        <Card>
+          <CardHeader>
+            <h1 className="text-center">Dashboard</h1>
+          </CardHeader>
+          <CardContent>
+            <p className="text-center text-slate-700">
+              Welcome to the dashboard! {session.user?.name}
+            </p>
+          </CardContent>
+        </Card>
+
         <form
           action={async () => {
             "use server";
