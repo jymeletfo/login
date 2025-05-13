@@ -1,5 +1,5 @@
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import { signOut, auth } from "@/auth";
+import { auth } from "@/auth";
 import { redirect } from "next/navigation";
 import Navbar from "@/custom/navbar";
 
